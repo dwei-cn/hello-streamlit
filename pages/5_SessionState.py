@@ -18,11 +18,11 @@ import pandas as pd
 import plotly.express as px
 
 st.write("# Session State")
-st.markdown("> Session State is a way to share variables between reruns, for each user session.")
+st.markdown("> `Session State` is a way to share variables between reruns, for each user session.")
 st.markdown("`Session State`主要就是在不同的rerun和refresh的操作之间储存variable，如果你不经常刷新page或者不怎么click某个button也不怎么需要用到，但是需要频繁click的话，就会很需要。")
 st.write('---')
       
-st.write("## An Example:")
+st.write("## 💯Counter:")
 # 初始化某个variable
 if "Counter" not in st.session_state:
     st.session_state["Counter"] = 0
