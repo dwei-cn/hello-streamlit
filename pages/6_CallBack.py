@@ -20,9 +20,8 @@ import plotly.express as px
 st.write("# Callback")
 st.markdown("> A `callback` is a python function which gets called when an input widget changes.")
 st.markdown("在 Streamlit 中，`callback` 通常是与 `st.button`、`st.checkbox` 等交互性组件结合使用时，用于在用户与应用程序进行交互时触发特定的操作或功能，经常可能需要用到用户的input作为args。")
+st.markdown("Check out this [link]([https://towardsdatascience.com/advanced-streamlit-session-state-and-callbacks-for-data-labelling-tool-1e4d9ad32a3f]) for more information.")
 st.write('---')
-
-import streamlit as st
 
 # 检查语句的初始化很重要，由于每次click会rerun，直接设置st.session_state.projects的话每次都会reset
 if 'projects' not in st.session_state:

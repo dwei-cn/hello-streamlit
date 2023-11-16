@@ -6,3 +6,6 @@ streamlit
 matplotlib
 seaborn
 plotly
+transformers
+torch 
+torchvision

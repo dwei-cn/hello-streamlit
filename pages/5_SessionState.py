@@ -20,6 +20,7 @@ import plotly.express as px
 st.write("# Session State")
 st.markdown("> `Session State` is a way to share variables between reruns, for each user session.")
 st.markdown("`Session State`主要就是在不同的rerun和refresh的操作之间储存variable，如果你不经常刷新page或者不怎么click某个button也不怎么需要用到，但是需要频繁click的话，就会很需要。")
+st.markdown("Check out this [link]([https://towardsdatascience.com/advanced-streamlit-session-state-and-callbacks-for-data-labelling-tool-1e4d9ad32a3f]) for more information.")
 st.write('---')
       
 st.write("## 💯Counter:")

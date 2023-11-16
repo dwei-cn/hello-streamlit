@@ -42,7 +42,7 @@ x = np.linspace(0, 10, 100)
 def run():
     st.set_page_config(
         page_title="Hello Streamlit!",
-        page_icon="👋",
+        page_icon=":tada:",
     )
 
     st.write("# Welcome to Streamlit! 🚀")
