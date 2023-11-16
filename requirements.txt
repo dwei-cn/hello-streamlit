@@ -9,3 +9,4 @@ plotly
 transformers
 torch 
 torchvision
+streamlit_lottie
