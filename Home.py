@@ -20,6 +20,9 @@ import time as ts
 from datetime import time
 from matplotlib import pyplot as plt
 import seaborn as sns
+from streamlit_option_menu import option_menu
+
+
 
 LOGGER = get_logger(__name__)
 
@@ -43,6 +46,7 @@ def run():
     st.set_page_config(
         page_title="Hello Streamlit!",
         page_icon=":tada:",
+        initial_sidebar_state="collapsed"  # hide side bar in the beginning
     )
 
     st.write("# Welcome to Streamlit! 🚀")

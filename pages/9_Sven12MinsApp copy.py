@@ -135,6 +135,11 @@ with st.container():
             year.text_input('Year')
 
             form_button = st.form_submit_button('Submit')
+            if form_button:
+                 if not first_name:
+                     st.error("First Name cannot be empty. Please enter a value.")
+                 else:
+                     st.success('You are all set!')
 
     with mid_col:
         st.empty()
@@ -147,48 +152,3 @@ with st.container():
 
 
 
-
-
-# st.title("Its the summer time! 🌴")
-# st.markdown("---")
-
-
-# with st.container():
-#     st.subheader("")
-
-
-
-
-
-
-# left_column, right_column = st.columns(2)
-# with left_column:
-#     # create a form
-#     with st.form('User Registration'):
-#         col1, col2 = st.columns(2)
-#         first_name = col1.text_input('First Name')
-#         last_name = col2.text_input('Last Name')
-
-#         email = st.text_input('Email')
-#         password = st.text_input('Password', type='password')
-#         confirm_password = st.text_input('Confirm Password', type='password')
-#         comments = st.text_area('Comment')
-
-#         day, month, year = st.columns(3)
-#         day.text_input('Day')
-#         month.text_input('Month')
-#         year.text_input('Year')
-
-#         form_button = st.form_submit_button('Submit')
-
-#         if form_button:
-#             if not first_name and not last_name:
-#                 st.warning("Please fill in both first and last name")
-#             else:
-#                 st.success("Registration successful!")
-
-#         print(first_name, last_name, email, password, confirm_password, comments)
-
-
-# with right_column:
-#     com.iframe(lottie_url)
