@@ -1,4 +1,3 @@
-
 def generate_html(dataframe: pd.DataFrame, styles: dict = {}, entries: int = 10):
     # get the table HTML from the dataframe without index column
     table_html = dataframe.to_html(table_id="table", index=False)

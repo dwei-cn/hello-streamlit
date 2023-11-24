@@ -4,7 +4,7 @@ from st_aggrid import AgGrid, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
 from mitosheet.streamlit.v1 import spreadsheet
 import json
-#from utils.datatables import generate_html
+from utils.datatables import generate_html
 #from utils.agstyler import PINLEFT, PRECISION_TWO, draw_grid
 
 
@@ -117,11 +117,11 @@ st.info(df.shape)
 ## datatables
 st.subheader('Streamlit DataTables')
 st.markdown('https://datatables.net/')
-html_table = generate_html(df)
+#html_table = generate_html(df)
 
 # method 1: load html file to page
 # Display the HTML content in Streamlit
-st.components.v1.html(html_table)
+#st.components.v1.html(html_table)
 
 # method 2: show the link of html file
 
@@ -153,16 +153,16 @@ st.subheader("Streamlit Editable Dataframes")
 
 #st.session_state = load_session_state()
 
-df2 = pd.read_csv('./cache/table.csv')
+#df2 = pd.read_csv('./cache/table.csv')
 
-# df2 = pd.DataFrame(
-#     [
-#         {"command": "st.selectbox", "rating": 4, "is_widget": True},
-#         {"command": "st.balloons", "rating": 5, "is_widget": False},
-#         {"command": "st.time_input", "rating": 3, "is_widget": True},
-#     ]
-# )
-# df2['comments'] = None
+df2 = pd.DataFrame(
+    [
+        {"command": "st.selectbox", "rating": 4, "is_widget": True},
+        {"command": "st.balloons", "rating": 5, "is_widget": False},
+        {"command": "st.time_input", "rating": 3, "is_widget": True},
+    ]
+)
+df2['comments'] = None
 
 edited_df = st.data_editor(
     df2, 
