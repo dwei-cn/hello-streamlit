@@ -1,2 +1,3 @@
 *.csv
 /myenv
+!./cache/food_restriction.csv
