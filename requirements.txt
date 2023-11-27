@@ -12,3 +12,5 @@ torchvision
 streamlit_lottie
 streamlit-aggrid
 mitosheet
+watchdog
+streamlit_option_menu

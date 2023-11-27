@@ -4,7 +4,7 @@ from st_aggrid import AgGrid, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
 from mitosheet.streamlit.v1 import spreadsheet
 import json
-from utils.datatables import generate_html
+#from utils.datatables import generate_html
 #from utils.agstyler import PINLEFT, PRECISION_TWO, draw_grid
 
 
@@ -115,9 +115,9 @@ st.info(df.shape)
 
 
 ## datatables
-st.subheader('Streamlit DataTables')
+st.subheader('Streamlit DataTables (<10K Records)')
 st.markdown('https://datatables.net/')
-#html_table = generate_html(df)
+html_table = generate_html(df.head())
 
 # method 1: load html file to page
 # Display the HTML content in Streamlit
@@ -126,7 +126,7 @@ st.markdown('https://datatables.net/')
 # method 2: show the link of html file
 
 # Create a hyperlink to the HTML file
-#open("./assets/table.html", "w").write(html_table)
+open("./assets/table.html", "w").write(html_table)
 
 # Read the contents of the HTML file
 #html_content = open("./assets/table.html", "r", encoding="utf-8").read()
@@ -140,9 +140,10 @@ st.markdown('https://datatables.net/')
 
 # Display the link using st.markdown
 #st.markdown(link_markdown, unsafe_allow_html=True)
-#st.markdown(f"<iframe src='data:text/html;base64,{html_table}' width='700' height='500'></iframe>", unsafe_allow_html=True)
+#st.code(html_table)
+#st.markdown(f"<iframe src='data:text/html;base64,{html_table}' width='1400' height='1000'></iframe>", unsafe_allow_html=True)
 
-#st.components.v1.html(html_table)
+st.components.v1.html(html_table, height=500, scrolling=True)
 #st.markdown(html_table)
 #st.info(df.shape)
 
@@ -153,16 +154,16 @@ st.subheader("Streamlit Editable Dataframes")
 
 #st.session_state = load_session_state()
 
-#df2 = pd.read_csv('./cache/table.csv')
+df2 = pd.read_csv('./cache/table.csv')
 
-df2 = pd.DataFrame(
-    [
-        {"command": "st.selectbox", "rating": 4, "is_widget": True},
-        {"command": "st.balloons", "rating": 5, "is_widget": False},
-        {"command": "st.time_input", "rating": 3, "is_widget": True},
-    ]
-)
-df2['comments'] = None
+# df2 = pd.DataFrame(
+#     [
+#         {"command": "st.selectbox", "rating": 4, "is_widget": True},
+#         {"command": "st.balloons", "rating": 5, "is_widget": False},
+#         {"command": "st.time_input", "rating": 3, "is_widget": True},
+#     ]
+# )
+# df2['comments'] = None
 
 edited_df = st.data_editor(
     df2, 

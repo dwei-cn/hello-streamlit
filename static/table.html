@@ -1,0 +1,116 @@
+
+    <html>
+    <head>
+        <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"> <!-- Add this line to load Roboto font -->
+        <style>
+            /* Add CSS rules here */
+            body {
+                font-family: 'Roboto', Arial, sans-serif; /* Apply Roboto font */
+            }
+            #table {
+                border-collapse: collapse; /* Remove table borders */
+            }
+            th, td {
+                 /* No additional font-family needed here */
+                border: none; /* Remove cell borders */
+                padding: 10px; /* Add padding to cells */
+            }
+            th:first-child, td:first-child {
+                font: normal normal bold 16px/40px Roboto; /* Apply bold font style to first column */
+                text-align: left; /* Left-align text in first column */
+                letter-spacing: 0px; /* Set letter spacing */
+                color: #333333; /* Set text color to grey */
+                text-transform: capitalize; /* Capitalize text */
+                opacity: 1; /* Set opacity */
+            }
+            th:not(:first-child), td:not(:first-child) {
+                font: normal normal normal 16px/40px Roboto; /* Apply normal font style to other columns */
+                text-align: left; /* Left-align text in other columns */
+                letter-spacing: 0px; /* Set letter spacing */
+                color: #333333; /* Set text color to grey */
+                text-transform: capitalize; /* Capitalize text */
+                opacity: 1; /* Set opacity */
+            }
+            tr:nth-child(odd) td {
+                background-color: #FFFFFF; /* Set odd rows background color */
+            }
+            tr:nth-child(even) td {
+                background-color: #F1F1F1; /* Set even rows background color */
+            }
+        </style>
+    </head>
+    <body>
+    <table border="1" class="dataframe" id="table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>location</th>
+      <th>date</th>
+      <th>variant</th>
+      <th>num_sequences</th>
+      <th>perc_sequences</th>
+      <th>num_sequences_total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Angola</td>
+      <td>2020-07-06</td>
+      <td>Alpha</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Angola</td>
+      <td>2020-07-06</td>
+      <td>B.1.1.277</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Angola</td>
+      <td>2020-07-06</td>
+      <td>B.1.1.302</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Angola</td>
+      <td>2020-07-06</td>
+      <td>B.1.1.519</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Angola</td>
+      <td>2020-07-06</td>
+      <td>B.1.160</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        function changeEntries() {
+            var select = document.getElementById("entries");
+            var selectedValue = select.value;
+            $('#table').DataTable().page.len(selectedValue).draw();
+        }
+
+        $(document).ready( function () {
+            $('#table').DataTable({
+                "pageLength": 10,
+                "paging": true,  // Enable pagination
+            });
+        });
+    </script>
+    </body>
+    </html>
+    
