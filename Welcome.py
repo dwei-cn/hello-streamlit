@@ -21,26 +21,12 @@ from datetime import time
 from matplotlib import pyplot as plt
 import seaborn as sns
 from streamlit_option_menu import option_menu
-
+import base64
 
 
 LOGGER = get_logger(__name__)
 
-json_file = {"a": 1, "b": 2, "c": 3, "d": 4}
-code = """print('hello world')"""
 
-np.random.seed(42)
-num_rows = 10
-table_data = pd.DataFrame(data = {
-    'ID': np.arange(1, num_rows + 1),
-    'Name': np.random.choice(['Alice', 'Bob', 'Charlie', 'David'], num_rows),
-    'Age': np.random.randint(20, 60, num_rows),
-    'City': np.random.choice(['New York', 'San Francisco', 'Los Angeles', 'Chicago'], num_rows),
-    'Salary': np.random.uniform(50000, 100000, num_rows)
-})
-youtube_url = "https://www.youtube.com/watch?v=J8TgKxomS2g"
-
-x = np.linspace(0, 10, 100)
 
 def run():
     st.set_page_config(
@@ -49,14 +35,59 @@ def run():
         #initial_sidebar_state="collapsed"  # hide side bar in the beginning
     )
 
-    st.balloons()
+        # load background img
+    background_image_link = "./assets/wedding.jpeg"
+
+    @st.cache_data
+    def get_img_as_base64(file):
+        with open(file, "rb") as f:
+            data = f.read()
+        return base64.b64encode(data).decode()
+
+    img = get_img_as_base64(background_image_link)
+
+    ## manage all css elements
+    with open('./assets/style.css') as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    
+    st.markdown(
+    f"""
+    <style>
+        [data-testid="stAppViewContainer"] > .main{{
+        background-image: url("data:image/png;base64,{img}");
+        background-size: cover;
+        #background-attachment: local;
+        }}
+        
+        [data-testid="stHeader"]{{
+            background-color: white;
+        }}
+
+        [data-testid="stSidebar"] > div:first-child {{
+            background-image: url("https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+            opacity:100;
+            background-position: center
+
+        }}
+
+    </style>
+    """,
+    unsafe_allow_html=True,
+    )
 
     st.write("# Welcome to Our Wedding! 👩🏻‍❤️‍👨🏻")
     #st.write("### $$号外：Mia和Dave终于修成正果了!$$")
     #st.write("## Welcome to Streamlit! 🚀")
     #st.write("### Welcome to Streamlit! 🚀")
-    st.write("首先非常感谢大家从世界各地前来（云）参加我们的婚礼！由于缺乏经验以及准备匆忙！导致整个过程略显匆忙和局促，希望大家能够多多包涵，最后还是希望大家和我们一同享受这个美好的时刻！")
-    st.write("最后还是希望大家和我们一同享受这个美好的时刻！")
+    st.write(" 首先非常感谢大家从世界各地前来（云）参加我们的婚礼！由于缺乏经验以及准备匆忙！导致整个过程略显匆忙和局促，希望大家能够多多包涵!")
+    st.write(" 最后还是希望大家和我们一同享受这个美好的时刻！")
+
+
+    
+    
+
+    ts.sleep(5)
+    st.balloons()
 
              
 
