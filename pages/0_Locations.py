@@ -45,12 +45,12 @@ st.markdown(
     )
 
 st.write("## Locations")
-st.write("- $日落花园小教堂$")
-st.write("[3931 Sunset Rd, Las Vegas, NV 89120](https://www.google.com/maps/place/Sunset+Gardens/@36.070684,-115.0914899,17z/data=!3m1!4b1!4m6!3m5!1s0x80c8d0034d1f197d:0xf658fbefa1758df!8m2!3d36.070684!4d-115.088915!16s%2Fg%2F1tpc87fc?entry=ttu)")
-st.write("- $Mott\ 32 餐厅$ ")
-st.write("[3325 S Las Vegas Blvd #206, Las Vegas, NV 89109](https://www.google.com/maps/place/Mott+32+Las+Vegas/@36.1248147,-115.1705473,17z/data=!3m2!4b1!5s0x80c8c43e5fe7780d:0xf87b9091b549198b!4m6!3m5!1s0x80c8c555a069355d:0x24660116790bf24d!8m2!3d36.1248147!4d-115.1679724!16s%2Fg%2F11fl7kthnx?entry=ttu)")
+st.write("- $Sunset\ Garden\ Chapel\ 小教堂$")
+st.write("[📍 3931 Sunset Rd, Las Vegas, NV 89120](https://www.google.com/maps/place/Sunset+Gardens/@36.070684,-115.0914899,17z/data=!3m1!4b1!4m6!3m5!1s0x80c8d0034d1f197d:0xf658fbefa1758df!8m2!3d36.070684!4d-115.088915!16s%2Fg%2F1tpc87fc?entry=ttu)")
+st.write("- $Mott\ 32\ Las\ Vegas\ 餐厅$ ")
+st.write("[📍 3325 S Las Vegas Blvd #206, Las Vegas, NV 89109](https://www.google.com/maps/place/Mott+32+Las+Vegas/@36.1248147,-115.1705473,17z/data=!3m2!4b1!5s0x80c8c43e5fe7780d:0xf87b9091b549198b!4m6!3m5!1s0x80c8c555a069355d:0x24660116790bf24d!8m2!3d36.1248147!4d-115.1679724!16s%2Fg%2F11fl7kthnx?entry=ttu)")
 st.write("- $Las\ Vegas\ Harry\ Reid\ 国际机场$")
-st.write("[5757 Wayne Newton Blvd, Las Vegas, NV 89119](https://www.google.com/maps/place/Harry+Reid+International+Airport/@36.0831046,-115.1507772,17z/data=!3m1!4b1!4m6!3m5!1s0x80c8c59f1f049c5d:0x471359241ec41e1e!8m2!3d36.0831046!4d-115.1482023!16zL20vMDFtejJn?entry=ttu)")
+st.write("[📍 5757 Wayne Newton Blvd, Las Vegas, NV 89119](https://www.google.com/maps/place/Harry+Reid+International+Airport/@36.0831046,-115.1507772,17z/data=!3m1!4b1!4m6!3m5!1s0x80c8c59f1f049c5d:0x471359241ec41e1e!8m2!3d36.0831046!4d-115.1482023!16zL20vMDFtejJn?entry=ttu)")
 
 st.markdown("")
 st.write("### Map")
